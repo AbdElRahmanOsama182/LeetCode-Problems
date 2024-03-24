@@ -1,3 +1,5 @@
+#define fastIO        ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
 class Solution {
 public:
     bool isVowel(char c){
@@ -5,6 +7,7 @@ public:
     }
 
     string reverseVowels(string s) {
+        fastIO
         int n = s.size();
         int i = 0, j = n-1;
         while (i < j){
