@@ -19,7 +19,9 @@ public:
         if (cnt > 1){
             ans += to_string(cnt);
         }
-        chars = vector<char>(ans.begin(), ans.end());
+        for(int i = 0; i < ans.size(); i++){
+            chars[i] = ans[i];
+        }
         return ans.size();
     }
 };
