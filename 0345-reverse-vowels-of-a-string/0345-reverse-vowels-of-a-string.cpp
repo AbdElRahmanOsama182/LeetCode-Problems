@@ -5,20 +5,15 @@ public:
     }
 
     string reverseVowels(string s) {
-        string vowels = "", ans = "";
-        for (char c : s){
-            if (isVowel(tolower(c)))
-                vowels += c;
+        int n = s.size();
+        int i = 0, j = n-1;
+        while (i < j){
+            while (i < j && !isVowel(tolower(s[i]))) i++;
+            while (i < j && !isVowel(tolower(s[j]))) j--;
+            swap(s[i], s[j]);
+            i++;
+            j--;
         }
-        int end = vowels.size()-1;
-        for (char c : s){
-            if (isVowel(tolower(c))){
-                ans += vowels[end];
-                end--;
-            }
-            else
-                ans += c;
-        }
-        return ans;
+        return s;
     }
 };
