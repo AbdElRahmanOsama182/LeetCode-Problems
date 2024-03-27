@@ -1,6 +1,19 @@
 class Solution {
 public:
     int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        if (k <= 1) return 0;
+        long long prod = 1;
+        int cnt = 0, st = 0;
+        for (int i = 0; i < nums.size(); i++){
+            prod *= nums[i];
+            while (prod >= k)
+                prod /= nums[st++];
+            cnt += i - st + 1;
+        }
+        return cnt;
+    }
+    // with log & Binary Search
+    int numSubarrayProductLessThanKLog(vector<int>& nums, int k) {
         if (k == 0) return 0;
         int n = nums.size()+1, cnt = 0;
         vector<double> prefix(n, 0);
