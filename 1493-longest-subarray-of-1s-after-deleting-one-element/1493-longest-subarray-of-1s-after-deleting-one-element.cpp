@@ -6,7 +6,6 @@ public:
         for (int i = 0; i < n; i++){
             if (nums[i] == 0 && zero){
                 ans = max(ans, i - st - 1);
-                cout<<i-st<<" ";
                 while (nums[st] != 0) st++;
                 st++;                    
             }
@@ -15,7 +14,6 @@ public:
             }
         }
         ans = max(ans, n - st - 1);
-        cout<<n-st-zero<<" ";
         return ans;
     }
 };
