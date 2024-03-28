@@ -1,23 +1,20 @@
 class Solution {
-    void comp(int index, string str, string digits, string phone[], vector<string> &comps){
-        if (index>=digits.length())
-        {
-            if (str.length()>0)
-                comps.push_back(str);
-            return;            
+public:
+    vector<string> phone = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    void comb(string &digits, int index, string current, vector<string> &combinations){
+        if (index == digits.size()){
+            combinations.push_back(current);
+            return;
         }
-        for (int i = 0; i < phone[digits.at(index)-'2'].length(); i++)
-        {
-            str.push_back(phone[digits.at(index)-'2'][i]);
-            comp(index+1, str, digits, phone, comps);
-            str.pop_back();
+        string letters = phone[digits[index] - '2'];
+        for (char c : letters){
+            comb(digits, index + 1, current + c, combinations);
         }
     }
-public:
     vector<string> letterCombinations(string digits) {
-        string phone[] = {"abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-        vector<string> comps;
-        comp(0,"", digits, phone, comps);
-        return comps;
+        vector<string> combinations;
+        if (digits.empty()) return combinations;
+        comb(digits, 0, "", combinations);
+        return combinations;
     }
 };
