@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    int dfs(TreeNode* root, long long targetSum) {
+    int dfs(TreeNode* root, long targetSum) {
         if (!root) return 0;
         return (root->val == targetSum) + dfs(root->left, targetSum - root->val) + dfs(root->right, targetSum - root->val);
     }
