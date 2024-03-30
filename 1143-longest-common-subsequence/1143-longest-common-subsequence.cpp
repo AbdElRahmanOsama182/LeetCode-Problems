@@ -1,7 +1,6 @@
 class Solution {
 public:
     int longestCommonSubsequence(string text1, string text2) {
-        if (text1.size() > text2.size()) swap(text1, text2);
         int n = text1.size(), m = text2.size();
         vector<vector<int>> dp(2, vector<int>(m+1, 0));
         for (int i = 1; i <= n; i++){
