@@ -12,15 +12,13 @@ public:
         return res;
     }
 private:
-    string getHash(string s){
+    string getHash(string& s){
         vector<int> freq(26, 0);
         for(auto c: s) 
             freq[c-'a']++;
         string hash = "";
-        for(int i=0; i<26; i++){
-            hash += to_string(freq[i]);
-            hash += '#';
-        }
+        for(int i=0; i<26; i++)
+            hash.append(to_string(freq[i]) + "#");
         return hash;
     }
 };
