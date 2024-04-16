@@ -1,33 +1,41 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        ListNode* prev = NULL;
-        ListNode* curr = head;
-        ListNode* next = NULL;
-        while (curr != NULL){
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        return prev;
-    }
-
     void reorderList(ListNode* head) {
-        ListNode* mid = head;
-        ListNode* fast = head;
-        while (fast != NULL && fast->next != NULL){
-            mid = mid->next;
+        if (!head || !head->next) return;
+        ListNode* slow = head, *fast = head->next;
+        while (fast && fast->next){
+            slow = slow->next;
             fast = fast->next->next;
         }
-        ListNode* rev = reverseList(mid);
-        ListNode* curr = head;
-        while (rev->next != NULL){
-            ListNode* temp = curr->next;
-            curr->next = rev;
-            rev = rev->next;
-            curr->next->next = temp;
-            curr = temp;
+        ListNode* second = slow->next;
+        slow->next = nullptr;
+        ListNode* prev = nullptr;
+        ListNode* next = nullptr;
+        while (second){
+            next = second->next;
+            second->next = prev;
+            prev = second;
+            second = next;
+        }
+        second = prev;
+        ListNode* first = head;
+        while (first && second){
+            ListNode* fNext = first->next;
+            ListNode* sNext = second->next;
+            first->next = second;
+            second->next = fNext;
+            first = fNext;
+            second = sNext;
         }
     }
 };
