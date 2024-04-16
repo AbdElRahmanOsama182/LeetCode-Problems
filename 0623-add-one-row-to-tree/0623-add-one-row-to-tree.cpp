@@ -19,16 +19,12 @@ public:
             return newRoot;
         }
         if (depth == 2){
-            if (root->left){
-                TreeNode* left = new TreeNode(val);
-                left->left = root->left;
-                root->left = left;
-            }
-            if (root->right){
-                TreeNode* right = new TreeNode(val);
-                right->right = root->right;
-                root->right = right;
-            }
+            TreeNode* left = new TreeNode(val);
+            TreeNode* right = new TreeNode(val);
+            left->left = root->left;
+            right->right = root->right;
+            root->left = left;
+            root->right = right;
             return root;
         }
         root->left = addOneRow(root->left, val, depth-1);
