@@ -1,10 +1,14 @@
 class Solution {
-public:
-    int dp[38] = {0};    
+public:  
     int tribonacci(int n) {
-        if (dp[n] != 0) return dp[n];
-        if (n < 2)  return dp[n] = n;
-        if (n == 2) return dp[n] = 1;
-        return dp[n] = tribonacci(n-1) + tribonacci(n-2) + tribonacci(n-3);
+        if (n == 0) return 0;
+        int prev = 1, prev1 = 1, prev2 = 0, curr = 1;
+        for (int i = 3; i <= n; i++) {
+            curr = prev+prev1+prev2;
+            prev2 = prev1;
+            prev1 = prev;
+            prev = curr;
+        }
+        return curr;
     }
 };
