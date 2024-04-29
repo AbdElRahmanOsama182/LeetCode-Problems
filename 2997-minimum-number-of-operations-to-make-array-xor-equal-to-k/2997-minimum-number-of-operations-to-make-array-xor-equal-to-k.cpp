@@ -6,7 +6,7 @@ public:
         int ans = 0;
         while (xr != 0) {
             if (xr & 1) ans++;
-            xr >>= 2;
+            xr >>= 1;
         }
         return ans;
     }
