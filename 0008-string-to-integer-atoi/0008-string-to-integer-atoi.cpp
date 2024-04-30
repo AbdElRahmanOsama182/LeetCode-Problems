@@ -1,25 +1,26 @@
 class Solution {
 public:
     int myAtoi(string s) {
-        bool neg = false, skip = false;
+        bool neg = false, skipSpaces = true;
         long long ans = 0;
-        for(auto i : s){
-            if (i == ' ' && !skip) continue;
-            if (i == '-' && !skip) {
-                neg = true, skip = true;
-                continue;
+        for (char c : s) {
+            if (c == ' ' && skipSpaces) continue;
+            else if (c == '-' && skipSpaces) {
+                skipSpaces = false;
+                neg = true;
             }
-            if (i == '+' && !skip) {
-                skip = true;
-                continue;
+            else if (c == '+' && skipSpaces) {
+                skipSpaces = false;
             }
-            if (i >= '0' && i <= '9'){
-                ans = ans*10 + (i-'0');
-                if (ans > INT_MAX) return neg ? INT_MIN : INT_MAX;
-                skip = true;
+            else if (c >= '0' && c <= '9') {
+                skipSpaces = false;
+                ans = ans * 10 + (c - '0');
+                if (ans > INT_MAX) {
+                    return neg? INT_MIN : INT_MAX;
+                }
             }
             else break;
         }
-        return neg ? -ans : ans;
+        return neg? -ans : ans;
     }
 };
