@@ -1,26 +1,25 @@
 class Solution {
 public:
+
     vector<vector<int>> threeSum(vector<int>& nums) {
         int n = nums.size();
-        unordered_map<int,int> mp;
-    set<vector<int>> res;
-        vector<int> temp(3);
-        for(int i = 0; i < n; i++) 
-            mp[nums[i]] = i;
-        for(int i = 0; i < n; i++) {
-            for(int j = i+1; j < n; j++) {
-                if (mp.count(0-nums[i]-nums[j])) {
-                    int idx = mp[0-nums[i]-nums[j]];
-                    if (idx != i && idx != j) {
-                        temp[0] = nums[i];
-                        temp[1] = nums[j];
-                        temp[2] = nums[idx];
-                        sort(temp.begin(), temp.end());
-                        res.insert(temp);
-                    }
+        vector<vector<int>> res;
+        sort(nums.begin(), nums.end());
+        for(int i=0; i<n; i++){
+            if(i>0 && nums[i] == nums[i-1]) continue;
+            int l = i+1, r = n-1;
+            while(l<r){
+                int sum = nums[i] + nums[l] + nums[r];
+                if(sum == 0){
+                    res.push_back({nums[i], nums[l], nums[r]});
+                    while(l<r && nums[l] == nums[l+1]) l++;
+                    while(l<r && nums[r] == nums[r-1]) r--;
+                    l++, r--;
                 }
+                else if(sum < 0) l++;
+                else r--;
             }
         }
-        return vector<vector<int>>(res.begin(), res.end());
+        return res;
     }
 };
