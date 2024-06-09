@@ -18,6 +18,6 @@ public:
         int sumD2 = board[0][2] + board[1][1] + board[2][0];
         if (sumD1 == 3 || sumD2 == 3) return "A";
         if (sumD1 == -3 || sumD2 == -3) return "B";
-        return "Draw";
+        return moves.size() == 9 ? "Draw" : "Pending";
     }
 };
