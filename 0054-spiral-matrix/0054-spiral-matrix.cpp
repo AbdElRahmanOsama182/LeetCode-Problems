@@ -1,30 +1,36 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        int l = 0, r = matrix[0].size()-1, t = 0, b = matrix.size()-1;
-        vector<int> ans;
-        while(l<r && t<b){
-            for(int i=l; i<=r; i++)
-                ans.push_back(matrix[t][i]);
-            t++;
-            for(int i=t; i<=b; i++)
-                ans.push_back(matrix[i][r]);
-            r--;
-            for(int i=r; i>=l; i--)
-                ans.push_back(matrix[b][i]);
-            b--;
-            for(int i=b; i>=t; i--)
-                ans.push_back(matrix[i][l]);
-            l++;
+        vector<int> a;
+        int count=0, minR=0, minC=0, maxR=matrix.size()-1, maxC=matrix[0].size()-1, total=matrix.size()*matrix[0].size();
+        while (count<total)
+        {
+            for (int i = minC; i <= maxC&& count<total; i++)
+            {
+                a.push_back(matrix.at(minR).at(i));
+                count++;
+            }
+            minR++;
+            for (int i = minR; i <= maxR&& count<total; i++)
+            {
+                a.push_back(matrix.at(i).at(maxC));
+                count++;
+            }
+            maxC--;
+            for (int i = maxC; i >= minC&& count<total; i--)
+            {
+                a.push_back(matrix.at(maxR).at(i));
+                count++;
+            }
+            maxR--;
+            for (int i = maxR; i >= minR&& count<total; i--)
+            {
+                a.push_back(matrix.at(i).at(minC));
+                count++;
+            }
+            minC++;
+            
         }
-        if(l==r){
-            for(int i=t; i<=b; i++)
-                ans.push_back(matrix[i][l]);
-        }
-        else if(t==b){
-            for(int i=l; i<=r; i++)
-                ans.push_back(matrix[t][i]);
-        }
-        return ans;
+        return a;
     }
 };
