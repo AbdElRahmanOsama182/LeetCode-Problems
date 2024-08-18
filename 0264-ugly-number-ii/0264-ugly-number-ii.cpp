@@ -1,14 +1,15 @@
 class Solution {
 public:
     int nthUglyNumber(int n) {
-        vector<int> dp(1, 1);
+        vector<int> dp(n, 0);
+        dp[0] = 1;
         int two = 0, three = 0, five = 0;
-        while (dp.size() < n) {
-            dp.push_back(min({2*dp[two], 3*dp[three], 5*dp[five]}));
-            if (dp.back() == 2*dp[two]) two++;
-            if (dp.back() == 3*dp[three]) three++;
-            if (dp.back() == 5*dp[five]) five++;
+        for (int i = 1; i < n; i++){
+            dp[i] = min({dp[two]*2, dp[three]*3, dp[five]*5});
+            if (dp[i] == dp[two]*2) two++;
+            if (dp[i] == dp[three]*3) three++;
+            if (dp[i] == dp[five]*5) five++;
         }
-        return dp.back();
+        return dp[n-1];
     }
 };
