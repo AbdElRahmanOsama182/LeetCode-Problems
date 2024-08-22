@@ -1,11 +1,6 @@
 class Solution {
 public:
     int findComplement(int num) {
-        int n = 0, x = num;
-        while (x) {
-            x >>= 1;
-            n++;
-        }
-        return num ^ ((1LL << n) - 1);
+        return (unsigned)~0 >> __builtin_clz(num) ^ num;
     }
 };
