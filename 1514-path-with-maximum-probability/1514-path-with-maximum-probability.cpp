@@ -8,7 +8,6 @@ public:
         }
         return dijkstra(adj, start_node, end_node);
     }
-
     double dijkstra(vector<vector<pair<int, double>>>& adj, int start_node, int end_node) {
         vector<double> probs(adj.size(), 0);
         probs[start_node] = 1;
