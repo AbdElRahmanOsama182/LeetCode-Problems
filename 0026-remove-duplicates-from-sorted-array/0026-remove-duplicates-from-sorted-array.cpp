@@ -1,7 +1,10 @@
 class Solution {
 public:
-    int removeDuplicates(vector<int>& v) {
-        v.resize(distance(v.begin(),unique(v.begin(), v.end())));
-        return v.size();
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size(), idx = 0;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] != nums[idx]) nums[++idx] = nums[i];
+        }
+        return idx+1;
     }
 };
