@@ -11,3 +11,11 @@ Collection of LeetCode questions to ace the coding interview!
             <source media="(prefers-color-scheme: light)" srcset="https://leetcode-badge-showcase.vercel.app/api?username=AbdElRahman182&theme=light&timestamp=1712145192"activity />
             <img src="https://leetcode-badge-showcase.vercel.app/api?username=AbdElRahman182&theme=black&timestamp=1712145192"activity /></picture></a>
 </p>
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [2839-check-if-strings-can-be-made-equal-with-operations-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy |
+<!---LeetCode Topics End-->
