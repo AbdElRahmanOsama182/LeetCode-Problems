@@ -18,4 +18,8 @@ Collection of LeetCode questions to ace the coding interview!
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2839-check-if-strings-can-be-made-equal-with-operations-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy |
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1848-minimum-distance-to-the-target-element](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/1848-minimum-distance-to-the-target-element/) | Easy |
 <!---LeetCode Topics End-->
