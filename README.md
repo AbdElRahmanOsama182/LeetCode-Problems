@@ -23,12 +23,23 @@ Collection of LeetCode questions to ace the coding interview!
 | ------- | ------- |
 | [1848-minimum-distance-to-the-target-element](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/1848-minimum-distance-to-the-target-element/) | Easy |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+| [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+## Greedy
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [3633-earliest-finish-time-for-land-and-water-rides-i](https://github.com/AbdElRahmanOsama182/LeetCode-Problems/tree/main/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy |
 <!---LeetCode Topics End-->
